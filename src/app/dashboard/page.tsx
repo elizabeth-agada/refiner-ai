@@ -167,7 +167,7 @@ export default function DashboardPage() {
 
       <main className="container mx-auto px-4 py-8 max-w-2xl">
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-semibold mb-2">Hello! I&apos;m here to help you boost</h1>
+          <h1 className="text-2xl font-semibold mb-2">Hello! I&apos;m here to help you improve</h1>
           <p className="text-2xl font-semibold">your resume and cv quality</p>
         </div>
 
