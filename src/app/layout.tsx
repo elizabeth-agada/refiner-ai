@@ -1,17 +1,14 @@
-import type { Metadata } from "next";
-import { Inter } from 'next/font/google'
-import { ThemeProvider } from '@/components/theme-provider'
-import './globals.css'
- 
+import type { Metadata } from "next"
+import { ThemeProvider } from "@/components/theme-provider"
+import { ToastProvider } from "@/components/ui/use-toast"
+import "./globals.css"
 
 export const metadata: Metadata = {
   title: "Refiner AI",
-  description: "Helping you refine your documents",
-};
+  description: "Helping you refine your documents with AI technology",
+  keywords: "CV, resume, AI, document refinement, job application",
+}
 
-
-const inter = Inter({ subsets: ['latin'] })
- 
 export default function RootLayout({
   children,
 }: {
@@ -19,17 +16,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
+      <body className="">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <ToastProvider>
+            {children}
+          </ToastProvider>
         </ThemeProvider>
       </body>
     </html>
   )
 }
-
