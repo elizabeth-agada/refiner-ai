@@ -101,20 +101,27 @@ export default function LandingPage() {
                 </Button>
               </div>
               <div className="flex justify-center">
-                <div className="relative w-full max-w-md aspect-square">
-                  <div className="absolute inset-0 bg-primary/10 rounded-lg transform rotate-3"></div>
-                  <div className="absolute inset-0 bg-background border border-border rounded-lg shadow-lg overflow-hidden">
-                    <Image
-                      src="/img/cv.jpeg"
-                      alt="CV Analysis"
-                      width={100}
-                      height={100}
-                      className="w-full h-full object-fit"
-                      quality={100}
-                    />
-                  </div>
-                </div>
-              </div>
+  <div className="relative w-full max-w-md aspect-square">
+    {/* Background decoration (keep if you want the rotated effect) */}
+    <div className="absolute inset-0 bg-primary/10 rounded-lg transform rotate-3"></div>
+    
+    {/* Main image container with improved settings */}
+    <div className="absolute inset-0 bg-background border border-border rounded-lg shadow-lg overflow-hidden">
+      <Image
+        src="/img/cv.jpg" 
+        alt="Professional CV Analysis"
+        width={800}  // Increased from 100
+        height={800} // Increased from 100
+        priority    // Ensures high loading priority
+        quality={100} // Maximum quality
+        className="w-full h-full object-cover" // Changed from 'cover' to 'contain'
+        style={{
+          filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))',
+        }}
+      />
+    </div>
+  </div>
+</div>
             </div>
           </div>
         </section>
